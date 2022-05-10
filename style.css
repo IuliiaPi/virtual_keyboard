@@ -1,51 +1,45 @@
 html {
-    box-sizing: border-box;   /*. (chto bu width = (width - padding)  + padding) borders and vnytr otstyp bydyt ychituvatsia in width and height elements */
+    box-sizing: border-box;
     scroll-behavior: smooth;
-  }
-  
-  *, *::before, *::after {
-  box-sizing: inherit;   /* nasledovanie from parents */
-  }
-  
-  body {
-    /* min-height: 100vh; */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
     margin: 0;
-    padding: 0;  
-      font-family: Arial, Helvetica, sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 130%;
-      letter-spacing: 0.06em;
-      color: #545454;
-  }
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #545454;
+}
 
-  .container {
+.container {
     max-width: 1200px;
-     margin: 0 auto;  /* vuravnivanie po centry contenta*/
-     padding: 10px 15px;  /* pri sugenii ne prilipaet k kraam*/
-  }
+    margin: 0 auto;
+    padding: 10px 15px;
+}
 
-  .div-input {
+.div-input {
     margin-bottom: 5px;
-  }
+}
 
 .input {
     width: 100%;
     min-height: 250px;
-    /* min-height: 100px; */
     padding: 20px;
     font-size: 18px;
     border: 1px solid lightgray;
-     /* border: none; */
-    /* box-sizing: border-box; */
-  }
-  
-  .keyboard {
-    /* position: fixed; */
-    /* left: 0; */
-    /* bottom: 0; */
-    /* max-width: 850px; */
+}
+
+.keyboard {
     width: 100%;
     height: 300px;
     padding: 5px 0;
@@ -55,126 +49,97 @@ html {
     background: rgb(34, 118, 171);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     transform: bottom 0.4s;
-    /* user-select: none; */
+    user-select: none;
     border-radius: 2px;
-  }
+}
 
-  .keyboard_hidden {
+.keyboard_hidden {
     bottom: -100%;
-  }
+}
 
-  .row {
+.row {
     width: 100%;
     min-height: 50px;
     margin-bottom: 10px;
-
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    text-align: center;
+}
 
-      text-align: center;
-  }
-
-  .btn {
+.btn {
     height: 45px;
-    /* width: 50px; */
     width: 6%;
     max-width: 90px;
-
     margin: 3px;
-    /* padding: 3px; */
+    padding: 3px;
     border-radius: 5px;
     border: 1px solid black;
+    background: rgba(255, 255, 255, 0.2);
+    color: azure;
+    font-size: 1.05rem;
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
 
-      background: rgba(255, 255, 255, 0.2);
-      color: azure;
-      font-size: 1.05rem;
-      outline: none;
-      cursor: pointer;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      vertical-align: top;
-      padding: 0;
-      -webkit-tap-highlight-color: transparent;
-      position: relative;
-  }
-
-  .btn:active {
+.btn:active {
     background: rgba(255, 255, 255, 0.12);
     transition: width 1s, height 1s;
-  }
+}
 
-   .btn:hover {
+.btn:hover {
     max-width: 80px;
     width: 6%;
     height: 40px;
     border-radius: 10px;
     background: rgb(182, 182, 97);
-  }
+}
 
-  .active {
+.active {
     background: rgb(182, 182, 97);
-   transition: width 1s, height 1s;
-  }
+    transition: width 1s, height 1s;
+}
 
-  .active1 {
-    background: black;
-   
-  }
-
-
-  /* .active:active {
-
-  } */
-
-
-  /* .active:hover {
-    width: 40px;
-    height: 35px;
-    border-radius: 6px;
-  } */
-
-  .btn_wide {
+.btn_wide {
     width: 12%;
-  }
+}
 
-  .btn_wide:hover {
+.btn_wide:hover {
     width: 12%;
     height: 40px;
     border-radius: 10px;
     background: rgb(182, 182, 97);
-  }
+}
 
-
-
-  .btn_extra-wide {
+.btn_extra-wide {
     width: 36%;
     max-width: 500px;
-  }
+}
 
-  .btn_extra-wide:hover {
+.btn_extra-wide:hover {
     width: 36%;
     max-width: 500px;
     height: 40px;
     border-radius: 10px;
     background: rgb(182, 182, 97);
-  }
+}
 
-
-
-  .btn_dark {
+.btn_dark {
     font-weight: 500;
     font-size: 0.85rem;
     background: rgba(0, 0, 0, 0.25);
-  }
+}
 
-  .message {
+.message {
     margin-top: 10px;
     font-size: 14px;
     align-items: center;
-  }
-
-
-  
+}
