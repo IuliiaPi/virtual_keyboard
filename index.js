@@ -137,6 +137,7 @@ keyboard.forEach(row => {
 
         document.onkeydown = function (event) {
             if (event.code == 'CapsLock') {
+                btn.classList.add('active');
                 document.onkeyup = function (event) {
                     console.log('hi-hi');
                 }
