@@ -79,7 +79,7 @@ const keyboard = [
         { text: { 'EN': '<', 'en': ',', 'ru': 'б' }, css: '' },
         { text: { 'EN': '>', 'en': '.', 'ru': 'ю' }, css: '' },
         { text: { 'EN': '?', 'en': '/', 'ru': '/' }, css: '' },
-        { text: { 'EN': '^', 'en': "^", 'ru': '^' }, css: ['btn_dark'] },
+        { text: { 'EN': '▲', 'en': "▲", 'ru': '▲' }, css: ['btn_dark'] },
         { text: { 'EN': 'shift', 'en': "shift", 'ru': 'shift' }, css: ['btn_wide', 'btn_dark'] },
     ], [
         { text: { 'en': "fn", 'ru': 'fn' }, css: ['btn_dark'] },
@@ -89,9 +89,9 @@ const keyboard = [
         { text: { 'en': " ", 'ru': ' ' }, css: ['btn_extra-wide', 'btn_dark'] },
         { text: { 'en': "command", 'ru': 'command' }, css: ['btn_wide', 'btn_dark'] },
         { text: { 'en': "option", 'ru': 'option' }, css: ['btn_dark'] },
-        { text: { 'en': '<', 'ru': '<' }, css: ['btn_dark'] },
-        { text: { 'en': 'v', 'ru': 'v' }, css: ['btn_dark'] },
-        { text: { 'en': '>', 'ru': '>' }, css: ['btn_dark'] },
+        { text: { 'en': '◄', 'ru': '◄' }, css: ['btn_dark'] },
+        { text: { 'en': '▼', 'ru': '▼' }, css: ['btn_dark'] },
+        { text: { 'en': '►', 'ru': '►' }, css: ['btn_dark'] },
     ]];
 
 let btn;
@@ -113,11 +113,7 @@ keyboard.forEach(row => {
             });
         }
 
-        if (key.text.en === 'caps lock') {
-            btn.innerText = key.text.ru;
-        } else {
-            btn.innerText = key.text.en;
-        }
+        btn.innerText = key.text.en;
 
         rowDiv.append(btn);
 
@@ -134,7 +130,6 @@ keyboard.forEach(row => {
             }
         }
 
-
         document.onkeydown = function (event) {
             if (event.code == 'CapsLock') {
                 btn.classList.add('active');
@@ -148,10 +143,41 @@ keyboard.forEach(row => {
         }
 
         btn.addEventListener("click", () => {
-            textarea.innerHTML += key.text.en;
-            if ((key.text.en === 'delete') || (key.text.en === 'tab') || (key.text.en === 'caps lock') || (key.text.en === 'return') || (key.text.en === 'shift') || (key.text.en === 'fn') || (key.text.en === 'control') || (key.text.en === 'option') || (key.text.en === 'command')) {
-                textarea.innerHTML = null;
+
+            switch (key.text.en) {
+                case 'delete':
+                    textarea.innerHTML += '';
+                    break;
+                case 'tab':
+                    textarea.innerHTML += '   ';
+                    break;
+                case 'caps lock':
+                    textarea.innerHTML += '';
+                    break;
+                case 'return':
+                    textarea.innerHTML += '\n';
+                    break;
+                case 'shift':
+                    textarea.innerHTML += '';
+                    break;
+                case 'fn':
+                    textarea.innerHTML += '';
+                    break;
+                case 'control':
+                    textarea.innerHTML += '';
+                    break;
+                case 'option':
+                    textarea.innerHTML += '';
+                    break;
+                case 'command':
+                    textarea.innerHTML += '';
+                    break;
+                default:
+                    textarea.innerHTML += key.text.en;
+                    break;
             }
+
         });
+
     });
 });
