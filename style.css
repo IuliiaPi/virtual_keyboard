@@ -15,7 +15,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #545454;
@@ -90,46 +90,52 @@ body {
     position: relative;
 }
 
-.btn:active {
-    background: rgba(255, 255, 255, 0.12);
-    transition: width 1s, height 1s;
+.btn:hover {
+    background: rgb(182, 182, 97);
 }
 
-.btn:hover {
-    max-width: 80px;
-    width: 6%;
-    height: 40px;
-    border-radius: 10px;
-    background: rgb(182, 182, 97);
+.btn:active {
+    background: rgba(255, 255, 255, 0.12);
+    animation: mymove 0.3s;
+}
+
+@keyframes mymove {
+    0% {
+        top: 0px;
+        background: rgb(166, 166, 113);
+        height: 35px;
+        border-radius: 50px;
+        color: rgb(3, 69, 109);
+    }
+
+    50% {
+        top: 0px;
+        background: rgb(166, 166, 113);
+        height: 35px;
+        border-radius: 50px;
+        color: rgb(3, 69, 109);
+    }
+
+    100% {
+        top: 0px;
+        background: rgb(182, 182, 97);
+        height: 45px;
+        border-radius: 10px;
+        color: rgb(3, 69, 109);
+    }
 }
 
 .active {
     background: rgb(182, 182, 97);
-    transition: width 1s, height 1s;
 }
 
 .btn_wide {
     width: 12%;
 }
 
-.btn_wide:hover {
-    width: 12%;
-    height: 40px;
-    border-radius: 10px;
-    background: rgb(182, 182, 97);
-}
-
 .btn_extra-wide {
     width: 36%;
     max-width: 500px;
-}
-
-.btn_extra-wide:hover {
-    width: 36%;
-    max-width: 500px;
-    height: 40px;
-    border-radius: 10px;
-    background: rgb(182, 182, 97);
 }
 
 .btn_dark {
